@@ -7,6 +7,7 @@ import LoopIcon from '@mui/icons-material/Loop';
 import IconButton from '@mui/material/IconButton';
 import PauseIcon from '@mui/icons-material/Pause';
 import InputSlider from "./VolumeSlider";
+import MediaControlCard from "./MediaControlCard";
 import "./Topbar.css"
 
 
@@ -53,7 +54,7 @@ function Topbar() {
                 </div>
             </div>
             <div className="Music">
-                    
+                    <MediaControlCard/>
             </div>
             <div className="Volumebar">
                 <IconButton>

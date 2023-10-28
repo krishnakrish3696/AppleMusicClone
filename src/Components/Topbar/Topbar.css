@@ -13,18 +13,18 @@
 .Topbarsection .MusicPlayersection {
     width: 100%;
     display: flex;
-    padding-left: 150px;
+    padding-left: 150px;    
 }
 
 .Topbarsection .Volumebar{
     padding-right: 200px;
 }
 
-.Topbarsection .Music{
+/* .Topbarsection .Music{
     height: 50px;
     width: 1500px;
     background-color: black;
     padding-right: 100px;
     margin-right: 300px;
     margin-bottom: 5px;
-}
+} */

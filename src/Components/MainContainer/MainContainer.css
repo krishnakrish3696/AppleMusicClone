@@ -1,14 +1,22 @@
 .MainContainersection{
   top: 80px;
   height: 100%;
-  width: 100%;
+  overflow-y: auto;
+  max-width: 1600px;
   margin-left: 288px;
   position: absolute;
   flex-grow: 1;
   z-index: 1;
+  padding: 20px; 
 }
 
 .MainContainersection .BrowserBanner {
     padding-left: 50px;
     padding-top: 20px;
+}
+
+.MainContainersection .NewMusicAlbum{
+    padding-left: 50px;
+    padding-top: 20px;
+    padding-bottom: 150px;
 }

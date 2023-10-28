@@ -9,13 +9,7 @@ function App() {
     <div className="App">
         <LeftMenu/>
         <Topbar/>
-        <MainContainer/>
-
-        {/* <div className='background'></div> */}
-        {/* <Routes>
-            <Route path='/' />
-        </Routes> */}
-        
+        <MainContainer/>      
     </div>
   );
 }

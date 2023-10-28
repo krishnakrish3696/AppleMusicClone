@@ -1,0 +1,10 @@
+.AlbumTitleandDescription h4{
+    font-size: 20px;
+    margin-bottom: 0px;
+}
+
+.AlbumTitleandDescription p{
+    font-size: 20px;  
+    color: gray;  
+    margin-top: 5px;
+}
