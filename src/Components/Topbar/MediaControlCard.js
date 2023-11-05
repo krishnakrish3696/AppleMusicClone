@@ -14,7 +14,7 @@ export default function MediaControlCard() {
   const theme = useTheme();
 
   return (
-    <Card sx={{ width:600 }}>
+    <Card sx={{ display: 'flex' }}>
       <Box sx={{ display: 'flex', flexDirection: 'column' }}>
         <CardContent sx={{ flex: '1 0 auto' }}>
           <Typography component="div" variant="h5">
@@ -24,7 +24,7 @@ export default function MediaControlCard() {
             Mac Miller
           </Typography>
         </CardContent>
-        {/* <Box sx={{ display: 'flex', alignItems: 'center', pl: 1, pb: 1 }}>
+        <Box sx={{ display: 'flex', alignItems: 'center', pl: 1, pb: 1 }}>
           <IconButton aria-label="previous">
             {theme.direction === 'rtl' ? <SkipNextIcon /> : <SkipPreviousIcon />}
           </IconButton>
@@ -34,7 +34,7 @@ export default function MediaControlCard() {
           <IconButton aria-label="next">
             {theme.direction === 'rtl' ? <SkipPreviousIcon /> : <SkipNextIcon />}
           </IconButton>
-        </Box> */}
+        </Box>
       </Box>
       <CardMedia
         component="img"

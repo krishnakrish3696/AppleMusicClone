@@ -18,8 +18,10 @@ const SimpleSlider = (props) => {
         },
       }
     );
+    
     const response = await data.json();
     setAllSongs(response.data);
+    console.log(response.data);
   }
   useEffect(() => {
     getCatergoryData();
@@ -83,27 +85,6 @@ const SimpleSlider = (props) => {
             </div>
           );
         })}
-        {/* <div>
-          <h3>2</h3>
-        </div>
-        <div>
-          <h3>3</h3>
-        </div>
-        <div>
-          <h3>4</h3>
-        </div>
-        <div>
-          <h3>5</h3>
-        </div>
-        <div>
-          <h3>6</h3>
-        </div>
-        <div>
-          <h3>7</h3>
-        </div>
-        <div>
-          <h3>8</h3>
-        </div> */}
       </Slider>
     </div>
   );

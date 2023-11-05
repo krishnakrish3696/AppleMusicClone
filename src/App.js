@@ -1,16 +1,17 @@
-import LeftMenu from './Components/LeftMenu/LeftMenu';
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import "./App.css";
+import LeftMenu from './Components/LeftMenu/LeftMenu';
 import MainContainer from './Components/MainContainer/MainContainer';
 import Topbar from './Components/Topbar/Topbar';
-import {Route, Routes} from 'react-router-dom';
 
 function App() {
   return (
-    <div className="App">
+      <div className="App">
         <LeftMenu/>
         <Topbar/>
-        <MainContainer/>      
-    </div>
+        <MainContainer/>
+      </div>
   );
 }
 
