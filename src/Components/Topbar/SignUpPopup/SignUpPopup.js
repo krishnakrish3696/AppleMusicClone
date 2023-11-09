@@ -20,7 +20,6 @@ export default function SignUpModal() {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
-  console.log("fucntioned");
 
   return (
     <div>

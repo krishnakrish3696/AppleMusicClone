@@ -5,6 +5,7 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { CardActionArea } from "@mui/material";
+import AlbumDetail from "../AlbumDetail/AlbumDetail";
 
 const SimpleSlider = (props) => {
   const { category, title } = props.categories;
@@ -21,8 +22,12 @@ const SimpleSlider = (props) => {
     
     const response = await data.json();
     setAllSongs(response.data);
-    console.log(response.data);
   }
+  const handleClickSlide = (item) => {
+    console.log(item._id);
+    // <AlbumDetail/>
+  };
+
   useEffect(() => {
     getCatergoryData();
   }, []);
@@ -73,6 +78,7 @@ const SimpleSlider = (props) => {
                     component="img"
                     height="200"
                     image={item.thumbnail}
+                    onClick={() => {handleClickSlide(item) }}
                     alt="green iguana"
                   />
                   <CardContent>

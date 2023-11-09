@@ -4,6 +4,7 @@ import "./App.css";
 import LeftMenu from './Components/LeftMenu/LeftMenu';
 import MainContainer from './Components/MainContainer/MainContainer';
 import Topbar from './Components/Topbar/Topbar';
+import AlbumDetail from './Components/MainContainer/AlbumDetail/AlbumDetail';
 
 function App() {
   return (

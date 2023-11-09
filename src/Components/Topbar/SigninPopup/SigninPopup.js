@@ -16,6 +16,7 @@ import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import { SiHandshake } from "react-icons/si";
 import { SlClose } from "react-icons/sl";
+import EmailInputWithMask from "./Email";
 import "./SigninPopup.css";
 
 const theme = createTheme({
@@ -24,15 +25,33 @@ const theme = createTheme({
   },
 });
 
+const Style = {
+  position: 'absolute',
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)',
+  width: 400,
+  bgcolor: 'background.paper',
+  border: '2px solid #000',
+  boxShadow: 24,
+  p: 4,
+};
+
 export default function UseModal() {
   const [open, setOpen] = React.useState(false);
+  const [showSignUpModal, setShowSignUpModal] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+  const handleCreateAccount = () => {
+    setShowSignUpModal(true);
+  };
 
   return (
     <div>
-      <TriggerButton onClick={handleOpen}>Sign In</TriggerButton>
+      <TriggerButton onClick={handleOpen}>Sign In</TriggerButton> 
+      {!showSignUpModal && (
       <Modal
+        id="SignInModel"
         aria-labelledby="transition-modal-title"
         aria-describedby="transition-modal-description"
         open={open}
@@ -42,7 +61,7 @@ export default function UseModal() {
         <Fade in={open}>
           <ModalContent sx={style}>
             <div>
-              <SlClose />
+              <SlClose size={30}/>
             </div>
             <div className="Icon">
               <BsApple size={50} />
@@ -101,7 +120,7 @@ export default function UseModal() {
             </div>
             <div className="btnClass">
               <ThemeProvider theme={theme}>
-                <Btn id="CreateButton" className="continuebtn" variant="contained">
+                <Btn id="CreateButton" onClick={handleCreateAccount} className="continuebtn" variant="contained">
                   Create Account
                 </Btn>
               </ThemeProvider>
@@ -109,6 +128,55 @@ export default function UseModal() {
           </ModalContent>
         </Fade>
       </Modal>
+      )}
+      {showSignUpModal && (
+        <Modal
+          id="SignUpModel"
+          open={showSignUpModal}
+          onClose={() => setShowSignUpModal(false)}
+          aria-labelledby="modal-modal-title"
+          aria-describedby="modal-modal-description"
+        >
+          <Fade in={open}>
+          <ModalContent sx={style}>
+            <div>
+              <SlClose size={30} />
+            </div>
+            <div className="Icon">
+              <BsApple size={50} />
+            </div>
+            <h2 id="transition-modal-title" className="modal-title">
+              Create Account
+            </h2>
+            <h3 id="transition-modal-description" className="modal-description">
+              Enter your details to get started.
+            </h3>
+            <div className="txtMail">
+              <Box component="form" sx={{"& > :not(style)": { m: 1, width: "500px" },}} noValidate autoComplete="off">
+                  <TextField id="outlined-basic" label="UserName" variant="outlined"/>
+              </Box>
+            </div>
+            <div className="txtMail">
+              <Box component="form" sx={{"& > :not(style)": { m: 1, width: "500px" },}} noValidate autoComplete="off">
+              <TextField id="outlined-basic" label="Email" type="email" variant="outlined"/>
+              </Box>
+            </div>
+            <div className="txtMail">
+              <Box component="form" sx={{"& > :not(style)": { m: 1, width: "500px" },}} noValidate autoComplete="off">
+                <TextField id="outlined-basic" label="Password" type="password" variant="outlined"/>
+              </Box>
+            </div>
+            <div className="btnClass">
+              <ThemeProvider theme={theme}>
+                <Btn className="continuebtn" variant="contained">
+                  SignUp
+                </Btn>
+              </ThemeProvider>
+            </div>
+          </ModalContent>
+          </Fade>
+        </Modal>
+      )}
     </div>
   );
 }

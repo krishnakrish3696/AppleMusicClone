@@ -20,7 +20,6 @@ const AlbumSlider = () => {
         .then(data => setAlbums(data.data))
         .catch(err => console.log(err))
     }, []);
-    console.log(albums);
     let settings = {
         dots: true,
         infinite: false,
