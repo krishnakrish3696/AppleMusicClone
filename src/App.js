@@ -9,8 +9,8 @@ function App() {
   return (
       <div className="App">
         <LeftMenu/>
-        <Topbar/>
         <MainContainer/>
+        <Topbar/>
       </div>
   );
 }
