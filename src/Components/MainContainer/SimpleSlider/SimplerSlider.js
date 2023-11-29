@@ -1,14 +1,17 @@
-import React, { Component, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
+import {Link, NavLink } from "react-router-dom";
 import Slider from "react-slick";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
-import Typography from "@mui/material/Typography";
 import { CardActionArea } from "@mui/material";
-import AlbumDetail from "../AlbumDetail/AlbumDetail";
+import "./SimplerSlicer.css"
+
 
 const SimpleSlider = (props) => {
   const { category, title } = props.categories;
+  let cat = category;
+  cat = cat[0].toUpperCase() + cat.slice(1);
   const [allsong, setAllSongs] = useState([]);
   async function getCatergoryData() {
     const data = await fetch(
@@ -19,18 +22,14 @@ const SimpleSlider = (props) => {
         },
       }
     );
-    
     const response = await data.json();
     setAllSongs(response.data);
   }
-  const handleClickSlide = (item) => {
-    console.log(item._id);
-    // <AlbumDetail/>
-  };
 
   useEffect(() => {
     getCatergoryData();
   }, []);
+
   let settings = {
     dots: true,
     infinite: false,
@@ -67,27 +66,35 @@ const SimpleSlider = (props) => {
   };
   return (
     <div>
-      <h2>{title} </h2>
+      <div> 
+        <Link to={{
+                pathname: "AllCards",
+                search: category,
+                }}><h3 id="catergoryname">{cat}</h3>
+        </Link>
+      </div>
       <Slider {...settings}>
         {allsong?.map((item) => {
+          const state = { stateParam: item._id };
           return (
             <div>
-              <Card sx={{ maxWidth: 220 }}>
-                <CardActionArea>
-                  <CardMedia
-                    component="img"
-                    height="200"
-                    image={item.thumbnail}
-                    onClick={() => {handleClickSlide(item) }}
-                    alt="green iguana"
-                  />
-                  <CardContent>
-                    <Typography gutterBottom variant="h7" component="div">
-                      {item.title}
-                    </Typography>
-                  </CardContent>
-                </CardActionArea>
+              <Card sx={{ width: 240, height: 240 }}>
+              <Link to={{
+                pathname: "AlbumDetail",
+                state: state,
+                hash: item._id
+                }}>
+                  <CardActionArea>
+                    <CardMedia
+                      component="img"
+                      height="240"
+                      image={item.thumbnail}
+                      alt="green iguana"
+                    />
+                  </CardActionArea>
+                </Link>
               </Card>
+              <h7 className="cardTitle">{item.title}</h7>
             </div>
           );
         })}

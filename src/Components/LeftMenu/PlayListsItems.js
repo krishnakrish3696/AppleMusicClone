@@ -7,22 +7,22 @@ const PlayListItems = [
     {
         id:1,
         icon:<IconButton> <QueueMusicIcon fontSize='small'/> </IconButton>,
-        name: "House Party!",
+        name: "Romantic!",
     },
     {
         id:1,
         icon:<IconButton> <QueueMusicIcon fontSize='small'/> </IconButton>,
-        name: "PoolSide BBQ!",
+        name: "Happy!",
     },
     {
         id:1,
         icon:<IconButton> <QueueMusicIcon fontSize='small'/> </IconButton>,
-        name: "Quarantine Feelz",
+        name: "Sad",
     },
     {
         id:1,
         icon:<IconButton> <AddIcon fontSize='small'/> </IconButton>,
-        name: "Create New",
+        name: "Excited",
     },
 ];
 

@@ -7,7 +7,7 @@ import AlbumSlider from "./AlbumSlider/AlbumSlider";
 
 function MainContainer() {
 
-   // const [albums, setAlbums] = useState([])
+    const [albums, setAlbums] = useState([])
     const Moods = [{
         category:"romantic",title:"Romantic Songs",
     },
@@ -28,7 +28,6 @@ function MainContainer() {
             }
         })
         .then(response => response.json())
-       // .then(data => setAlbums(data.data))
         .catch(err => console.log(err))
     }, [])
 
@@ -47,11 +46,11 @@ function MainContainer() {
                 <h3>
                     New Music
                 </h3>
-                <hr />
+                <hr/>
                 <div>   
-                {
-                    Moods.map((item)=> <SimpleSlider categories={item} />)
-                }
+                    {
+                        Moods.map((item)=> <SimpleSlider categories={item} />)
+                    }
                 </div>
             </div>
         </div>

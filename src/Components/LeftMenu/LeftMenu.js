@@ -9,8 +9,7 @@ import { PlayListItems } from "./PlayListsItems";
 import './LeftMenu.css';
 
 
-function LeftMenu()
-{
+const LeftMenu = () => {
     return(
         <div className="leftMenu">                
             <div className = "logoContainer">
@@ -37,4 +36,4 @@ function LeftMenu()
     )
 }
 
-export default LeftMenu
+export default LeftMenu;
